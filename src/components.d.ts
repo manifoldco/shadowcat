@@ -9,53 +9,27 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
-  }
+  interface ManifoldOauth {}
 }
 
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLManifoldOauthElement extends Components.ManifoldOauth, HTMLStencilElement {}
+  var HTMLManifoldOauthElement: {
+    prototype: HTMLManifoldOauthElement;
+    new (): HTMLManifoldOauthElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'manifold-oauth': HTMLManifoldOauthElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
-  }
+  interface ManifoldOauth extends JSXBase.HTMLAttributes<HTMLManifoldOauthElement> {}
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
+    'manifold-oauth': ManifoldOauth;
   }
 }
 
