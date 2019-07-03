@@ -1,13 +1,14 @@
-import { Component, h, Prop } from "@stencil/core";
+import { Event, EventEmitter, Component, h, Prop } from "@stencil/core";
 
 @Component({
   tag: "manifold-oauth"
 })
 export class ManifoldOauth {
   @Prop() oauthUrl: string;
+  @Event() tokenReceived: EventEmitter;
 
   tokenListener = (ev: MessageEvent) => {
-    console.log(ev);
+    this.tokenReceived.emit(ev.data);
   };
 
   componentWillLoad() {
