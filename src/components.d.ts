@@ -9,7 +9,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface ManifoldOauth {}
+  interface ManifoldOauth {
+    'oauthUrl': string;
+  }
 }
 
 declare global {
@@ -26,7 +28,9 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface ManifoldOauth extends JSXBase.HTMLAttributes<HTMLManifoldOauthElement> {}
+  interface ManifoldOauth extends JSXBase.HTMLAttributes<HTMLManifoldOauthElement> {
+    'oauthUrl'?: string;
+  }
 
   interface IntrinsicElements {
     'manifold-oauth': ManifoldOauth;

@@ -1,9 +1,11 @@
-import { Component, h } from "@stencil/core";
+import { Component, h, Prop } from "@stencil/core";
 
 @Component({
   tag: "manifold-oauth"
 })
 export class ManifoldOauth {
+  @Prop() oauthUrl: string;
+
   tokenListener = (ev: MessageEvent) => {
     console.log(ev);
   };
@@ -18,10 +20,7 @@ export class ManifoldOauth {
 
   render() {
     return (
-      <iframe
-        style={{ height: "100vh", width: "100vw" }}
-        src="http://localhost:8080/signin/oauth/web"
-      />
+      <iframe style={{ height: "0px", width: "0px" }} src={this.oauthUrl} />
     );
   }
 }
