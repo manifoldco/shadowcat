@@ -12,6 +12,16 @@
     <script nomodule src="/build/shadowcat.js"></script>
   </head>
   <body>
-    <manifold-oauth></manifold-oauth>
+    <manifold-oauth
+      id="oauth"
+      oauth-url="https://shadowcat-test-server.herokuapp.com/signin/oauth/web"
+    ></manifold-oauth>
+
+    <script>
+      const oauth = document.getElementById("oauth");
+      oauth.addEventListener("tokenReceived", e => {
+        console.log(e.detail);
+      });
+    </script>
   </body>
 </html>
