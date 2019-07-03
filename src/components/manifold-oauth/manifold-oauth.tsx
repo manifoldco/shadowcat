@@ -20,8 +20,6 @@ export class ManifoldOauth {
   }
 
   render() {
-    return (
-      <iframe style={{ height: "0px", width: "0px" }} src={this.oauthUrl} />
-    );
+    return <iframe style={{ display: "none" }} src={this.oauthUrl} />;
   }
 }
