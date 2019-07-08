@@ -18,8 +18,7 @@
     ></manifold-oauth>
 
     <script>
-      const oauth = document.getElementById("oauth");
-      oauth.addEventListener("tokenReceived", e => {
+      document.addEventListener("tokenReceived", e => {
         console.log(e.detail);
       });
     </script>
