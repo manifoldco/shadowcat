@@ -5,7 +5,7 @@ Invisible web component auth implementation of Manifold&#39;s PUMA &lt;https://g
 ## Usage
 
 1. `npm i @manifoldco/shadowcat`
-1. Register the `manifold-oauth` web component with one of the following methods:
+2. Register the `manifold-oauth` web component with one of the following methods:
 
 **ES Module**
 
@@ -19,13 +19,13 @@ Invisible web component auth implementation of Manifold&#39;s PUMA &lt;https://g
 <!-- TODO -->
 ```
 
-1. Add the following code anywhere on your website/app to get an auth token:
+3. Add the following code anywhere on your website/app to get an auth token:
 
 ```html
 <manifold-oauth oauth-url="[your-oauth-url]"></manifold-oauth>
 ```
 
-1. Listen for the event `tokenReceived`:
+4. Listen for the event `tokenReceived`:
 
 ```js
 document.addEventListener("tokenReceived", e => {
