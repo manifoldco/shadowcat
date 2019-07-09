@@ -5,18 +5,12 @@ Invisible web component auth implementation of Manifold&#39;s PUMA &lt;https://g
 ## Usage
 
 1. `npm i @manifoldco/shadowcat`
-2. Register the `manifold-oauth` web component with one of the following methods:
-
-**ES Module**
+2. Import and register the `manifold-oauth` web component:
 
 ```js
-// TODO
-```
+import { defineCustomElements } from '@manifoldco/shadowcat/dist/loader';
 
-**HTML**
-
-```html
-<!-- TODO -->
+defineCustomElements(window);
 ```
 
 3. Add the following code anywhere on your website/app to get an auth token:
@@ -36,14 +30,14 @@ document.addEventListener("tokenReceived", e => {
 
 ## Dev Setup
 
-1. `npm install` to install dependencies
-1. `npm start` to start the development server
+1. `npm install` to install dependencies.
+1. `npm start` to start the development server.
 1. Go to `localhost:3333`. The development server will display a blank page. 
 1. Open the console. There will be a message/token logged.
 
 ## Publish to npm
 
-:shrug:
+<!-- Dave.js: I'm not sure if we just do the regular publishing or if there's a job for it liek we do for UI. -->
 
 ## Links
 
