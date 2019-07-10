@@ -30,7 +30,7 @@ declare global {
 declare namespace LocalJSX {
   interface ManifoldOauth extends JSXBase.HTMLAttributes<HTMLManifoldOauthElement> {
     'oauthUrl'?: string;
-    'onTokenReceived'?: (event: CustomEvent<any>) => void;
+    'onReceiveManifoldToken'?: (event: CustomEvent<any>) => void;
   }
 
   interface IntrinsicElements {
