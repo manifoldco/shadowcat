@@ -9,18 +9,6 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/shadowcat/shadowcat.js",
-  "files": [
-    "dist/",
-    "loader/"
-  ],
-  "scripts": {
-    "build": "stencil build --docs",
-    "publish": "node scripts/publish",
-    "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
-    "test:coverage": "npm run test --coverage",
-    "test.watch": "stencil test --spec --e2e --watchAll"
-  },
   "devDependencies": {
     "@stencil/core": "^1.1.6",
     "@types/jest": "24.0.15",
@@ -31,5 +19,6 @@
     "prettier": "^1.18.2",
     "puppeteer": "1.17.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "version": "0.0.1"
 }
