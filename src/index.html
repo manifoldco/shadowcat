@@ -32,12 +32,12 @@
       //These event listeners will be implemented as needed inside of our UI
       //library and the resulting auth tokens are logged here for testing purposes.
       const serverOauth = document.querySelector("#server-side");
-      serverOauth.addEventListener("tokenReceived", e => {
+      serverOauth.addEventListener("receiveManifoldToken", e => {
         console.log("server-side: ", e.detail);
       });
 
       const clientOauth = document.querySelector("#client-side");
-      clientOauth.addEventListener("tokenReceived", e => {
+      clientOauth.addEventListener("receiveManifoldToken", e => {
         console.log("client-side: ", e.detail);
       });
     </script>
