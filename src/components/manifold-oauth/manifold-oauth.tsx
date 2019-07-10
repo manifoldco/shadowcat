@@ -4,7 +4,7 @@ import { Event, EventEmitter, Component, h, Prop } from "@stencil/core";
   tag: "manifold-oauth"
 })
 export class ManifoldOauth {
-  @Prop() oauthUrl: string = "https://login.manifold.co/signin/oauth/web";
+  @Prop() oauthUrl?: string = "https://login.manifold.co/signin/oauth/web";
   @Event() receiveManifoldToken: EventEmitter;
 
   tokenListener = (ev: MessageEvent) => {

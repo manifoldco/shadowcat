@@ -10,7 +10,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface ManifoldOauth {
-    'oauthUrl': string;
+    'oauthUrl'?: string;
   }
 }
 
