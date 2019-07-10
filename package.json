@@ -16,6 +16,7 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "publish": "node scripts/publish",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test:coverage": "npm run test --coverage",
