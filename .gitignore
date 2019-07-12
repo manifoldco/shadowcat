@@ -1,5 +1,28 @@
-coverage/
-node_modules/
-dist/
-www/
+# System
+*~
+*.sw[mnpcod]
+*.log
+*.lock
+*.tmp
+*.tmp.*
+log.txt
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+UserInterfaceState.xcuserstate
+.env
+
+# Stencil
+!www/favicon.ico
+.idea/
+.sass-cache/
 .stencil/
+.versions/
+.vscode/
+coverage/
+dist/
+node_modules/
+pkg/
+www/
+$RECYCLE.BIN/

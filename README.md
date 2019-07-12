@@ -37,7 +37,11 @@ document.addEventListener("tokenReceived", e => {
 
 ## Publish to npm
 
-<!-- Dave.js: I'm not sure if we just do the regular publishing or if there's a job for it liek we do for UI. -->
+1. Add a git tag with the version number you want to publish. 
+   - For example, version 1 would be `git tag v1.0.0`.
+1. Publish the version to npm by running `npm run publish`. 
+   - Ensure that you're logged into your npm account and have access to publish packages in the `@manifoldco` org when you do this.
+
 
 ## Links
 
