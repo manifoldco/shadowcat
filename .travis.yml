@@ -4,10 +4,15 @@ node_js:
 cache: npm
 stages:
   - test
+  - publish
 jobs:
   include:
     - stage: test
       name: "\U0001F5DC️ Run tests"
       script: npm run test:coverage
+    - stage: publish
+      name: Publish to npm
+      script: npm run publish
+      if: tag IS present
 after_success:
   - npx codecov
