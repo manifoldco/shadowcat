@@ -6,7 +6,9 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  AuthToken,
+} from './interface';
 
 export namespace Components {
   interface ManifoldOauth {
@@ -30,7 +32,7 @@ declare global {
 declare namespace LocalJSX {
   interface ManifoldOauth extends JSXBase.HTMLAttributes<HTMLManifoldOauthElement> {
     'oauthUrl'?: string;
-    'onReceiveManifoldToken'?: (event: CustomEvent<any>) => void;
+    'onReceiveManifoldToken'?: (event: CustomEvent<AuthToken>) => void;
   }
 
   interface IntrinsicElements {

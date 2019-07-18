@@ -14,9 +14,9 @@
 
 ## Events
 
-| Event                  | Description | Type               |
-| ---------------------- | ----------- | ------------------ |
-| `receiveManifoldToken` |             | `CustomEvent<any>` |
+| Event                  | Description | Type                     |
+| ---------------------- | ----------- | ------------------------ |
+| `receiveManifoldToken` |             | `CustomEvent<AuthToken>` |
 
 
 ----------------------------------------------

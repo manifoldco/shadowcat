@@ -1,14 +1,20 @@
 import { Event, EventEmitter, Component, h, Prop } from "@stencil/core";
+import { AuthToken, PumaAuthToken } from "../../interface";
 
 @Component({
   tag: "manifold-oauth"
 })
 export class ManifoldOauth {
   @Prop() oauthUrl?: string = "https://login.manifold.co/signin/oauth/web";
-  @Event() receiveManifoldToken: EventEmitter;
+  @Event() receiveManifoldToken: EventEmitter<AuthToken>;
 
   tokenListener = (ev: MessageEvent) => {
-    this.receiveManifoldToken.emit(ev.data);
+    const pumaToken = ev.data as PumaAuthToken;
+    this.receiveManifoldToken.emit({
+      token: pumaToken.access_token,
+      expiry: pumaToken.expiry,
+      error: pumaToken.error
+    });
   };
 
   componentWillLoad() {
