@@ -50,6 +50,8 @@ document.addEventListener("tokenReceived", e => {
 
 [![GitHub release](https://img.shields.io/github/tag/manifoldco/shadowcat.svg?label=latest)](https://github.com/manifoldco/shadowcat/releases)
 
-[![Travis](https://img.shields.io/travis/manifoldco/shadowcat/master.svg)](https://travis-ci.org/manifoldco/shadowcat)
+[![Travis](https://img.shields.io/travis/manifoldco/shadowcat/master.svg)](https://travis-ci.com/manifoldco/shadowcat)
+
+[![version (scoped)](https://img.shields.io/npm/v/@manifoldco/shadowcat.svg)](https://www.npmjs.com/package/@manifoldco/shadowcat)
 
 [![License](https://img.shields.io/badge/license-BSD-blue.svg)](./LICENSE.md)
