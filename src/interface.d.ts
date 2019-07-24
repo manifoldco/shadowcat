@@ -7,12 +7,12 @@ export interface AuthError {
 
 export interface AuthToken {
   token?: string;
-  expiry?: string;
+  expiry?: number;
   error?: AuthError;
 }
 
 export interface PumaAuthToken {
   access_token?: string;
-  expiry?: string;
+  expiry?: number;
   error?: AuthError;
 }
