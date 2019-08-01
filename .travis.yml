@@ -2,6 +2,8 @@ language: node_js
 node_js:
   - 12.4.0
 cache: npm
+before_install:
+  - echo "//registry.npmjs.org/:_authToken=$(npx @manifoldco/cli export -t manifold -p shadowcat-ci | grep NPM_TOKEN | cut -f2 -d "=")" >> ~/.npmrc
 stages:
   - test
   - publish
@@ -10,9 +12,12 @@ jobs:
     - stage: test
       name: "\U0001F5DC️ Run tests"
       script: npm run test:coverage
+    - stage: test
+      name: "📦 bundlesize"
+      script: npm run profile
     - stage: publish
-      name: Publish to npm
+      name: `🚀 Publish to npm'
       script: npm run publish
-      if: tag IS present
+      if: tag IS present AND branch = master
 after_success:
   - npx codecov
