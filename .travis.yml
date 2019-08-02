@@ -16,7 +16,7 @@ jobs:
       name: "📦 bundlesize"
       script: npm run profile
     - stage: publish
-      name: `🚀 Publish to npm'
+      name: "🚀 Publish to npm"
       script: npm run publish
       if: tag IS present AND branch = master
 after_success:
