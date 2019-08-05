@@ -12,8 +12,27 @@
   "files": [
     "dist/"
   ],
+  "bundlesize": [
+    {
+      "path": "./dist/esm/loader.mjs",
+      "maxSize": "1 kB",
+      "compression": "none"
+    },
+    {
+      "path": "./dist/esm/manifold-!(mock)*.js",
+      "maxSize": "1 kB",
+      "compression": "none"
+    },
+    {
+      "path": "./dist/esm/chunk-*.js",
+      "maxSize": "40 kB",
+      "compression": "none"
+    }
+  ],
   "scripts": {
     "build": "stencil build --docs",
+    "prepare": "stencil build",
+    "profile": "stencil build && npx bundlesize",
     "publish": "node scripts/publish",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",

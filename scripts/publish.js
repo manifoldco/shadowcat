@@ -21,7 +21,7 @@ const pkgDir = resolve(__dirname, "..", "pkg");
 if (!existsSync(pkgDir)) mkdirSync(pkgDir);
 emptyDirSync(pkgDir);
 copySync(oldDistDir, newDistDir);
-copySync(resolve(__dirname, "..", "readme.md"), resolve(pkgDir, "readme.md"));
+copySync(resolve(__dirname, "..", "README.md"), resolve(pkgDir, "README.md"));
 console.log(`[1/3] 🧹 Cleaning up…`);
 
 // 2. Read Git tag
