@@ -34,7 +34,7 @@
     "prepare": "stencil build",
     "profile": "stencil build && npx bundlesize",
     "publish": "node scripts/publish",
-    "start": "manifold run -t manifold -p shadowcat -- stencil build --dev --watch --serve",
+    "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test:coverage": "npm run test --coverage",
     "test.watch": "stencil test --spec --e2e --watchAll"
@@ -47,8 +47,7 @@
     "jest": "24.8.0",
     "jest-cli": "24.8.0",
     "prettier": "^1.18.2",
-    "puppeteer": "1.19.0",
-    "rollup-plugin-replace": "^2.2.0"
+    "puppeteer": "1.19.0"
   },
   "license": "MIT"
 }

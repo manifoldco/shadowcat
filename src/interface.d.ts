@@ -9,6 +9,7 @@ export interface AuthToken {
   token?: string;
   expiry?: number;
   error?: AuthError;
+  duration?: number;
 }
 
 export interface PumaAuthToken {

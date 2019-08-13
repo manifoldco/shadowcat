@@ -17,7 +17,7 @@ jobs:
       script: npm run profile
     - stage: publish
       name: "🚀 Publish to npm"
-      script: npx @manifoldco/cli run -t manifold -p shadowcat -- npm run publish
+      script: npm run publish
       if: tag IS present AND branch = master
 after_success:
   - npx codecov
