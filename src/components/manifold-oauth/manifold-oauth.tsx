@@ -8,16 +8,20 @@ export class ManifoldOauth {
   @Prop() oauthUrl?: string = "https://login.manifold.co/signin/oauth/web";
   @Event() receiveManifoldToken: EventEmitter<AuthToken>;
 
+  private loadTime?: Date;
+
   tokenListener = (ev: MessageEvent) => {
     const pumaToken = ev.data as PumaAuthToken;
     this.receiveManifoldToken.emit({
       token: pumaToken.access_token,
       expiry: pumaToken.expiry,
-      error: pumaToken.error
+      error: pumaToken.error,
+      duration: new Date().getTime() - this.loadTime.getTime()
     });
   };
 
   componentWillLoad() {
+    this.loadTime = new Date();
     window.addEventListener("message", this.tokenListener);
   }
 
@@ -26,6 +30,6 @@ export class ManifoldOauth {
   }
 
   render() {
-    return <iframe style={{ display: "none" }} src={this.oauthUrl} />;
+    return <iframe src={this.oauthUrl} style={{ display: "none" }} />;
   }
 }
