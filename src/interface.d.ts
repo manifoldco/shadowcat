@@ -1,4 +1,5 @@
-export * from './components';
+// Note: this is a circular dependency which can cause issues. Is this OK?
+export * from './components'; // eslint-disable-line import/no-cycle
 
 export interface AuthError {
   code: number;
