@@ -78,7 +78,7 @@ In any setup, you can use a CDN for Shadowcat
 
 ```
 https://js.cdn.manifold.co/@manifoldco/shadowcat/       # latest (beware of breaking changes!)
-https://js.cdn.manifold.co/@manifoldco/shadowcat/0.2.0/ # specific version
+https://js.cdn.manifold.co/@manifoldco/shadowcat@0.2.0/ # specific version
 ```
 
 ## Options
