@@ -1,4 +1,4 @@
-export * from "./components";
+export * from './components';
 
 export interface AuthError {
   code: number;
