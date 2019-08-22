@@ -1,6 +1,12 @@
 {
   "name": "@manifoldco/shadowcat",
   "description": "Invisible web component auth implementation of Manifold's PUMA",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manifoldco/ui.git"
+  },
+  "author": "manifoldco",
+  "license": "BSD",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -54,6 +60,5 @@
     "jest-cli": "24.8.0",
     "prettier": "^1.18.2",
     "puppeteer": "1.19.0"
-  },
-  "license": "MIT"
+  }
 }
