@@ -58,7 +58,7 @@ const App = () => {
   <script src="https://unpkg.com/@manifoldco/shadowcat/dist/manifold.js"></script>
   <script>
     document
-      .querySelector("manifold-auth")
+      .querySelector("manifold-oauth")
       .addEventListener("receiveManifoldToken", e => {
         console.log(e.detail);
         // {
