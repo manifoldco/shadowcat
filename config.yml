@@ -1,0 +1,12 @@
+version: 1
+update_configs:
+  - ignored_updates:
+      - match:
+        dependency_name: 'jest' # Version-managed by Stencil
+        version_requirement: '*'
+      - match:
+        dependency_name: 'jest-cli' # Version-managed by Stencil
+        version_requirement: '*'
+      - match:
+        dependency_name: 'puppeteer' # Version-managed by Stencil
+        version_requirement: '*'
