@@ -1,4 +1,5 @@
-// Note: this is a circular dependency which can cause issues. Is this OK?
+// Expose library interfaces via npm
+// -> https://github.com/ionic-team/ionic/blob/master/core/src/interface.d.ts#L3
 export * from './components'; // eslint-disable-line import/no-cycle
 
 export interface AuthError {
