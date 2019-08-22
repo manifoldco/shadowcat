@@ -10,16 +10,13 @@ stages:
 jobs:
   include:
     - stage: test
-      name: '🧹 Lint'
-      script: npm run lint
-    - stage: test
       name: "\U0001F5DC️ Run tests"
       script: npm run test:coverage
     - stage: test
-      name: '📦 bundlesize'
+      name: "📦 bundlesize"
       script: npm run profile
     - stage: publish
-      name: '🚀 Publish to npm'
+      name: "🚀 Publish to npm"
       script: npm run publish
       if: tag IS present AND branch = master
 after_success:

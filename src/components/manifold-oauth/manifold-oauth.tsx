@@ -6,7 +6,7 @@ export class ManifoldOauth {
   @Prop() oauthUrl?: string = 'https://login.manifold.co/signin/oauth/web';
   @Event() receiveManifoldToken: EventEmitter<AuthToken>;
 
-  private loadTime?;
+  private loadTime?: Date;
 
   tokenListener = (ev: MessageEvent) => {
     const pumaToken = ev.data as PumaAuthToken;
