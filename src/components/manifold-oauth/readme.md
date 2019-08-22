@@ -9,7 +9,7 @@
 
 | Property   | Attribute   | Description | Type     | Default                                        |
 | ---------- | ----------- | ----------- | -------- | ---------------------------------------------- |
-| `oauthUrl` | `oauth-url` |             | `string` | `"https://login.manifold.co/signin/oauth/web"` |
+| `oauthUrl` | `oauth-url` |             | `string` | `'https://login.manifold.co/signin/oauth/web'` |
 
 
 ## Events
