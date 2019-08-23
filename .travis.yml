@@ -10,6 +10,9 @@ stages:
 jobs:
   include:
     - stage: test
+      name: "🧹 Lint"
+      script: npm run lint
+    - stage: test
       name: "\U0001F5DC️ Run tests"
       script: npm run test:coverage
     - stage: test
