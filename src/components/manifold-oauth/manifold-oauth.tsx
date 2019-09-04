@@ -36,6 +36,7 @@ export class ManifoldOauth {
         frameborder="0"
         id="manifold-oauth-window"
         name="manifold-oauth-window"
+        sandbox="true"
         scrolling="no"
         tabindex="-1"
         style={{

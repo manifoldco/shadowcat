@@ -10,8 +10,10 @@ describe('my-component', () => {
     const element = await page.find('manifold-oauth');
     expect(element).toHaveClass('hydrated');
   });
+});
 
-  it('iframe keeps essential styling for Firefox', async () => {
+describe('browser support', () => {
+  it('Firefox: iframe can’t be display block to execute JS, but shouldn’t be visible to user either', async () => {
     const page = await newE2EPage();
     await page.setContent('<manifold-oauth></manifold-oauth>');
     await page.waitForChanges();
@@ -40,6 +42,22 @@ describe('my-component', () => {
       userSelect: 'none',
       visibility: 'hidden',
       width: '75vw',
+    });
+  });
+
+  describe('security', () => {
+    it('sandboxes', async () => {
+      const page = await newE2EPage();
+      await page.setContent('<manifold-oauth></manifold-oauth>');
+      await page.waitForChanges();
+      const iframe = await page.find('iframe');
+
+      if (!iframe) {
+        throw new Error('iframe not in document');
+      }
+
+      const sandbox = await iframe.getAttribute('sandbox');
+      expect(sandbox).toBe('true');
     });
   });
 });
