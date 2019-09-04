@@ -8,8 +8,8 @@
     />
     <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/shadowcat.esm.js"></script>
-    <script nomodule src="/build/shadowcat.js"></script>
+    <script type="module" src="/build/manifold.esm.js"></script>
+    <script nomodule src="/build/manifold.js"></script>
   </head>
   <body>
     <!-- Our typical oauth workflow using puma includes several server-side
@@ -31,14 +31,14 @@
     <script>
       //These event listeners will be implemented as needed inside of our UI
       //library and the resulting auth tokens are logged here for testing purposes.
-      const serverOauth = document.querySelector("#server-side");
-      serverOauth.addEventListener("receiveManifoldToken", e => {
-        console.log("server-side: ", e.detail);
+      const serverOauth = document.querySelector('#server-side');
+      serverOauth.addEventListener('receiveManifoldToken', e => {
+        console.log('server-side: ', e.detail);
       });
 
-      const clientOauth = document.querySelector("#client-side");
-      clientOauth.addEventListener("receiveManifoldToken", e => {
-        console.log("client-side: ", e.detail);
+      const clientOauth = document.querySelector('#client-side');
+      clientOauth.addEventListener('receiveManifoldToken', e => {
+        console.log('client-side: ', e.detail);
       });
     </script>
   </body>
