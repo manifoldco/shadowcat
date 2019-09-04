@@ -11,9 +11,7 @@ import {
 } from './interface';
 
 export namespace Components {
-  interface ManifoldOauth {
-    'oauthUrl'?: string;
-  }
+  interface ManifoldOauth {}
 }
 
 declare global {
@@ -31,7 +29,6 @@ declare global {
 
 declare namespace LocalJSX {
   interface ManifoldOauth extends JSXBase.HTMLAttributes<HTMLManifoldOauthElement> {
-    'oauthUrl'?: string;
     'onReceiveManifoldToken'?: (event: CustomEvent<AuthToken>) => void;
   }
 
