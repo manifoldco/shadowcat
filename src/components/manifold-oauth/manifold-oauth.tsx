@@ -38,6 +38,7 @@ export class ManifoldOauth {
         name="manifold-oauth-window"
         scrolling="no"
         tabindex="-1"
+        sandbox="allow-scripts"
         style={{
           border: 'none', // don’t have a border
           display: 'block', // SUPER important for iframe to not be display: none

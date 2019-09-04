@@ -3,12 +3,18 @@ import { newE2EPage } from '@stencil/core/testing';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 describe('my-component', () => {
-  it('renders', async () => {
+  it('is sandboxed to only allow scripts', async () => {
     const page = await newE2EPage();
 
     await page.setContent('<manifold-oauth></manifold-oauth>');
-    const element = await page.find('manifold-oauth');
-    expect(element).toHaveClass('hydrated');
+    await page.waitForChanges();
+
+    const iframe = await page.find('iframe');
+    expect.assertions(1);
+    if (iframe) {
+      const sandbox = await iframe.getAttribute('sandbox');
+      expect(sandbox).toEqual('allow-scripts');
+    }
   });
 
   it('iframe keeps essential styling for Firefox', async () => {
