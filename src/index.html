@@ -12,33 +12,13 @@
     <script nomodule src="/build/manifold.js"></script>
   </head>
   <body>
-    <!-- Our typical oauth workflow using puma includes several server-side
-      redirects in order to get the auth token. This component tests a similar
-      workflow using the mock server. -->
-    <manifold-oauth
-      id="server-side"
-      oauth-url="https://manifold-shadowcat-test-server.herokuapp.com/signin/oauth/web"
-    ></manifold-oauth>
-
-    <!-- Some platform-providers may want their oauth flow to include a
-      client-side redirect. This component tests that workflow using a different
-      endpoint on the mock server. -->
-    <manifold-oauth
-      id="client-side"
-      oauth-url="https://manifold-shadowcat-test-server.herokuapp.com/signin/oauth/redirect"
-    ></manifold-oauth>
-
+    <manifold-oauth></manifold-oauth>
     <script>
       //These event listeners will be implemented as needed inside of our UI
       //library and the resulting auth tokens are logged here for testing purposes.
-      const serverOauth = document.querySelector('#server-side');
+      const serverOauth = document.querySelector('manifold-oauth');
       serverOauth.addEventListener('receiveManifoldToken', e => {
         console.log('server-side: ', e.detail);
-      });
-
-      const clientOauth = document.querySelector('#client-side');
-      clientOauth.addEventListener('receiveManifoldToken', e => {
-        console.log('client-side: ', e.detail);
       });
     </script>
   </body>

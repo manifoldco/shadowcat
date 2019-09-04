@@ -13,7 +13,7 @@ describe('my-component', () => {
     expect.assertions(1);
     if (iframe) {
       const sandbox = await iframe.getAttribute('sandbox');
-      expect(sandbox).toEqual('allow-scripts');
+      expect(sandbox).toEqual('allow-scripts allow-same-origin');
     }
   });
 

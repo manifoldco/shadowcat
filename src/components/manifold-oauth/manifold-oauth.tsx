@@ -1,21 +1,23 @@
-import { Event, EventEmitter, Component, h, Prop } from '@stencil/core';
+import { Event, EventEmitter, Component, h } from '@stencil/core';
 import { AuthToken, PumaAuthToken } from '../../interface';
 
 @Component({ tag: 'manifold-oauth' })
 export class ManifoldOauth {
-  @Prop() oauthUrl?: string = 'https://login.manifold.co/signin/oauth/web';
   @Event() receiveManifoldToken: EventEmitter<AuthToken>;
 
   private loadTime?: Date;
 
   tokenListener = (ev: MessageEvent) => {
     const pumaToken = ev.data as PumaAuthToken;
-    this.receiveManifoldToken.emit({
-      token: pumaToken.access_token,
-      expiry: pumaToken.expiry,
-      error: pumaToken.error,
-      duration: new Date().getTime() - this.loadTime.getTime(),
-    });
+
+    if (ev.origin === 'https://login.manifold.co') {
+      this.receiveManifoldToken.emit({
+        token: pumaToken.access_token,
+        expiry: pumaToken.expiry,
+        error: pumaToken.error,
+        duration: new Date().getTime() - this.loadTime.getTime(),
+      });
+    }
   };
 
   componentWillLoad() {
@@ -30,7 +32,7 @@ export class ManifoldOauth {
   render() {
     return (
       <iframe
-        src={this.oauthUrl}
+        src="https://login.manifold.co/signin/oauth/web"
         allowtransparency="true"
         aria-hidden="true"
         frameborder="0"
@@ -38,7 +40,7 @@ export class ManifoldOauth {
         name="manifold-oauth-window"
         scrolling="no"
         tabindex="-1"
-        sandbox="allow-scripts"
+        sandbox="allow-scripts allow-same-origin"
         style={{
           border: 'none', // don’t have a border
           display: 'block', // SUPER important for iframe to not be display: none
