@@ -10,12 +10,15 @@ export class ManifoldOauth {
 
   tokenListener = (ev: MessageEvent) => {
     const pumaToken = ev.data as PumaAuthToken;
-    this.receiveManifoldToken.emit({
-      token: pumaToken.access_token,
-      expiry: pumaToken.expiry,
-      error: pumaToken.error,
-      duration: new Date().getTime() - this.loadTime.getTime(),
-    });
+
+    if (ev.origin === 'https://login.manifold.co') {
+      this.receiveManifoldToken.emit({
+        token: pumaToken.access_token,
+        expiry: pumaToken.expiry,
+        error: pumaToken.error,
+        duration: new Date().getTime() - this.loadTime.getTime(),
+      });
+    }
   };
 
   componentWillLoad() {
