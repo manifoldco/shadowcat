@@ -40,9 +40,8 @@ export class ManifoldOauth {
   refreshIframe() {
     const iframe = this.el.querySelector('iframe');
     if (iframe) {
-      const src = iframe.getAttribute('src');
-      // set iframe to its own src to refresh. Works in Chrome, Firefox, and Safari.
-      iframe.setAttribute('src', src);
+      // set iframe src again to refresh. Works in Chrome, Firefox, and Safari.
+      iframe.setAttribute('src', OAUTH_URL);
     }
   }
 

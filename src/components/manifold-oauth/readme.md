@@ -5,6 +5,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property | Attribute | Description | Type     | Default     |
+| -------- | --------- | ----------- | -------- | ----------- |
+| `tick`   | `tick`    |             | `string` | `undefined` |
+
+
 ## Events
 
 | Event                  | Description | Type                     |
