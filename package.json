@@ -33,7 +33,7 @@
     },
     {
       "path": "./dist/esm/manifold*.js",
-      "maxSize": "2 kB",
+      "maxSize": "2.5 kB",
       "compression": "none"
     }
   ],

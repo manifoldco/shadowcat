@@ -11,7 +11,9 @@ import {
 } from './interface';
 
 export namespace Components {
-  interface ManifoldOauth {}
+  interface ManifoldOauth {
+    'tick'?: string;
+  }
 }
 
 declare global {
@@ -30,6 +32,7 @@ declare global {
 declare namespace LocalJSX {
   interface ManifoldOauth extends JSXBase.HTMLAttributes<HTMLManifoldOauthElement> {
     'onReceiveManifoldToken'?: (event: CustomEvent<AuthToken>) => void;
+    'tick'?: string;
   }
 
   interface IntrinsicElements {
